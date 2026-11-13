@@ -1,4 +1,5 @@
 import './App.css'
+import Products from './components/Products'
 
 function App() {
   
@@ -9,7 +10,7 @@ function App() {
     <>
       <header>{CIM}</header>
         <article>
-          ide jön a termék
+          <Products />
         </article>
       <footer>&copy;Készítette: {NEV}</footer>
     </>
