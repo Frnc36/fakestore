@@ -17,10 +17,22 @@ const ProductContext = createContext<ProductContextType | undefined>(undefined);
 
 export function ProductProvider({ children }: { children: ReactNode }) {
   const [productsList, setProductsList] = useState<productType[]>([]);
+  const [load, setLoad] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
   //useEffect Hook - megtudod mondani hogy mikor fusson le
   useEffect(() => {
-    getProducts().then((data) => setProductsList(data));
+    getProducts()
+      .then((data) => {
+        setProductsList(data);
+        setError(null);
+      })
+      .catch(() => {
+        setError("Nem sikerült betölteni az adatokat!");
+      })
+      .finally(() => {
+        setLoad(false);
+      });
   }, []); //,[] mellék hatásokat kezeli
 
   return (

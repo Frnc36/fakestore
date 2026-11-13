@@ -1,5 +1,5 @@
+const API_URL = "https://fakestoreapi.com/products";
+
 export function getProducts() {
-  return fetch("https://fakestoreapi.com/products")
-    .then((response) => response.json())
-    
+  return fetch(API_URL).then((response) => response.json());
 }
