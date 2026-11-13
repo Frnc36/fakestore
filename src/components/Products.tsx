@@ -3,7 +3,7 @@ import { useProductContext } from "../context/ProductContext";
 
 function Products() {
   const { productsList } = useProductContext();
-  return <div></div>;
+  return <div>Products</div>;
 }
 
 export default Products;
