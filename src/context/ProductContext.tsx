@@ -11,6 +11,8 @@ import { getProducts } from "../services/ProductsSevice";
 interface ProductContextType {
   /* Provider value-jába biztos be kell írni */
   productsList: productType[];
+  load: boolean;
+  error: string | null;
 }
 
 const ProductContext = createContext<ProductContextType | undefined>(undefined);
@@ -36,7 +38,7 @@ export function ProductProvider({ children }: { children: ReactNode }) {
   }, []); //,[] mellék hatásokat kezeli
 
   return (
-    <ProductContext.Provider value={{ productsList }}>
+    <ProductContext.Provider value={{ productsList, load, error }}>
       {children}
     </ProductContext.Provider>
   );

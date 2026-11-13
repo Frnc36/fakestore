@@ -1,6 +1,6 @@
 import type { productType } from "../types/productType";
 
-const API_URL = "https://fakestoreapi.com/products";
+const API_URL = "https://fakestoreapi.com/products  ";
 
 export function getProducts() {
   return fetch(API_URL)
