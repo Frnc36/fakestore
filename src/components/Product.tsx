@@ -6,13 +6,13 @@ interface ProductProps {
 
 function Product({ product }: ProductProps) {
   return (
-    <div className="product">
+    <div className="border" >
       <p>{product.id}</p>
       <p>{product.title}</p>
       <p>{product.price}</p>
       <p>{product.description}</p>
       <p>{product.category}</p>
-      <p>{product.image}</p>
+      <img src={product.image} alt="Product" />
       <p>{product.rating.rate}</p>
       <p>{product.rating.count}</p>
     </div>

@@ -19,7 +19,7 @@ function Products() {
         )
   })} */
   return (
-    <div className="products">
+    <div className="grid grid-cols-3 gap-4  ">
       {productsList.map((product, i) => {
         return <Product product={product} key={i} />;
       })}
