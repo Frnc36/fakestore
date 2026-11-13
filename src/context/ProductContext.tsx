@@ -1,4 +1,4 @@
-import { createContext, useState, type ReactNode } from "react";
+import { createContext, useContext, useState, type ReactNode } from "react";
 import type { productType } from "../types/productType";
 
 interface ProductContextType {
@@ -16,4 +16,12 @@ export function ProductProvider({ children }: { children: ReactNode }) {
       {children}
     </ProductContext.Provider>
   );
+}
+
+export function useProductContext() {
+  const context = useContext(ProductContext);
+  if (context === undefined) {
+    throw new Error("Csak a productProvider-en belül használható");
+  }
+  return context;
 }
