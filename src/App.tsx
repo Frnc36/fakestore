@@ -7,12 +7,12 @@ function App() {
 
   return (
     <>
-      <main>
-        <header>{CIM}</header>
+      <main className="m-4">
+        <header className="text-center ">{CIM}</header>
         <article>
           <Products />
         </article>
-        <footer>&copy;Készítette: {NEV}</footer>
+        <footer className="text-center">&copy;Készítette: {NEV}</footer>
       </main>
     </>
   );
